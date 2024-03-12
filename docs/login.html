@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Page</title>
+<style>
+body{
+     background-color:#33ff99;
+    }
+input[type="submit"]{
+    width:20%;
+  background-color:pink;
+}
+#fp{
+text-align:left;
+}
+</style>
+<script>
+            function validateusername(){
+                var x = document.getElementById("username").value;
+                // var regex = [a-z];
+                 var regex = /^[a-zA-Z]+$/;
+
+
+                if(regex.test(x)){
+                    alert("Correct format");
+                }
+                else{
+                    alert("Incorrect format");
+                }
+            }
+            function validatepassword(){
+                var x = document.getElementById("password").value;
+                // var regex = [a-z];
+                var regex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+
+                if(regex.test(x)){
+                    alert("Correct format");
+                }
+                else{
+                    alert("Incorrect format");
+                }
+            }
+</script>
+</head>
+<body><center>
+<h3>login page</h3>
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required onfocusout="validateusername(username)"/><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required  onfocusout="validatepassword(password)"/><br><br>
+
+    <center><input type="submit" value="LOGIN"></center><br>
+    <a id="fp" href=# >Forgot Password</a><br><br>
+    <a  id="su" href=#>Sign Up</a>
+  </form>
+</center>
+</body>
+</html>
