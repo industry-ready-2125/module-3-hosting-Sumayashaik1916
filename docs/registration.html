@@ -1,0 +1,128 @@
+<html>
+<head>
+ <title>Registration</title>
+<style>
+  body{
+   background-color:#00ffff;
+  }
+
+#username{
+  margin-left:50px;
+}
+#password{
+  margin-left:56px;
+}
+#cpassword{
+  margin-left:1px;
+}
+#email{
+  margin-left:80px;
+}
+#mobile{
+  margin-left:25px;
+}
+#gen{
+  margin-left:79px;
+}
+input[type="submit"] {
+     background-color:pink;
+     font-size:20px;
+     text-align:left;
+    }
+.box {
+  width: 500px;
+  height: 300px;
+  padding: 20px;
+  border: 2px solid #000;
+  margin: 10px;
+  box-sizing: border-box; 
+background-color:#e396a0;
+
+}
+
+</style>
+<script>
+            function validateusername(){
+                var x = document.getElementById("username").value;
+                // var regex = [a-z];
+                 var regex = /^[a-zA-Z]+$/;
+
+
+                if(regex.test(x)){
+                    alert("Correct format");
+                }
+                else{
+                    alert("Incorrect format");
+                }
+            }
+             function validatepassword(){
+                var x = document.getElementById("password").value;
+                // var regex = [a-z];
+                var regex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+
+                if(regex.test(x)){
+                    alert("Correct format");
+                }
+                else{
+                    alert("Incorrect format");
+                }
+            }
+             function validateemail(){
+                var x = document.getElementById("email").value;
+                // var regex = [a-z];
+                var regex =/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+                if(regex.test(x)){
+                    alert("Correct format");
+                }
+                else{
+                    alert("Incorrect format");
+                }
+            }
+             function validatemobile(){
+                var x = document.getElementById("mobile").value;
+                // var regex = [a-z];
+                var regex =/^[6-9]\d{9}$/;
+
+                if(regex.test(x)){
+                    alert("Correct format");
+                }
+                else{
+                    alert("Incorrect format");
+                }
+            }
+            function validatevalidateconfirmpassword(){
+                var x = document.getElementById("password").value;
+                var y = document.getElementById("cpassword").value;
+                // var regex = [a-z];
+                //var regex =/^[6-9]\d{9}$/;
+
+                if(x===y){
+                    alert("matched");
+                }
+                else{
+                    alert("not matched");
+                }
+            }
+ </script>
+</head>
+<body><center>
+ <h2>Registration</h2>
+ <form class="box">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" onfocusout="validateusername(username)"/><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" onfocusout="validatepassword(password)"/><br><br>
+    <label for="confirm password">confirm Password:</label>
+    <input type="password" id="cpassword" name="confirm password" onfocusout="validateconfirmpassword(cpassword)"><br><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" onfocusout="validateemail(email)"/><br><br>
+    <label for="mobile">Mobile number:</label>
+    <input type="mobile number" id="mobile" name="mobile" onfocusout="validatemobile(mobile)"><br><br>
+    <label for="gender">gender:</label>
+    <input type="text" id="gen" name="gen"><br><br>
+    <input type="submit"  value="Register" style="margin-left:30px">
+ </form>
+</center>
+</body>
+</html>
